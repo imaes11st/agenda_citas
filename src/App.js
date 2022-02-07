@@ -103,7 +103,9 @@ const App = () => {
             </div>
           </form>
           <div className="olvidoContraseña">
-            <Link to="./register/register.js">¿Olvidaste tu contraseña?</Link>
+            <li>
+              <a href="./register">¿Olvidaste tu contraseña?</a>
+            </li>
           </div>
         </div>
       )}
