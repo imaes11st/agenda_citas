@@ -45,18 +45,11 @@ import { TextField } from "@mui/material";
   <div className="App-row">
     <Button
       sx={{ marginLeft: 2, marginRight: 2 }}
-      className="App-button"
-      disableElevation
-    >
-      Registrar
-    </Button>
-    <Button
-      sx={{ marginLeft: 2, marginRight: 2 }}
       ClassName="App-button"
       variant="contained"
       disableElevation
     >
-      Ingresar
+      Registrar
     </Button>
   </div>
 </form>;
