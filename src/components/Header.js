@@ -37,7 +37,6 @@ const useStyle = makeStyles((theme) => ({
   root: {
     position: "sticky",
     top: 0,
-    backgroundColor: "#fff",
     zIndex: 99,
     width: "100vw",
   },
@@ -45,6 +44,7 @@ const useStyle = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    background: "#FFFFFF",
   },
   logo: {
     height: "30px",
@@ -65,7 +65,7 @@ const useStyle = makeStyles((theme) => ({
     padding: theme.spacing(1, 5, 1, 5),
   },
   right: {
-    color: "##F50002",
+    color: "#FFFFFF",
     display: "flex",
     alignItems: "center",
     marginLeft: theme.spacing(2),
