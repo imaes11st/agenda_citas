@@ -59,13 +59,14 @@ const useStyle = makeStyles((theme) => ({
     minWidth: "300px",
     padding: theme.spacing(1),
     margin: theme.spacing(1),
+    color: "#B0B0B0",
   },
   input: {
     fontSize: "2rem",
     padding: theme.spacing(1, 5, 1, 5),
   },
   right: {
-    color: "#FFFFFF",
+    color: "#B0B0B0",
     display: "flex",
     alignItems: "center",
     marginLeft: theme.spacing(2),
