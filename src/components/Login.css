@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  box-sizing: inherit;
+  margin: 100px;
+}
+
+.h1-title {
+  margin: 25px;
+}
+
+.App-form1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.App-textField1 {
+  margin: 5px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-recaptcha {
+  margin-top: 10px;
+}
+
+.error-captcha {
+  margin-top: 10px;
+}
+
+.error-captcha {
+  color: red;
+  font-weight: 600;
+}
+.App-row {
+  margin: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+.App-button {
+  flex-direction: row;
+}
+
+.olvidoContraseña {
+  margin-bottom: 20px;
+}

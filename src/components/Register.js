@@ -16,13 +16,20 @@ const Register = () => {
       </h1>
       <div className="App-textField">
         <div className="register-col1">
-        <TextField
+          <TextField
             sx={{ m: 1, marginTop: 0 }}
             className="App-textField"
             label="Apellidos"
             variant="outlined"
           />
-          <FormControl sx={{ m: 1, marginTop: 1 }} fullWidth>
+          <TextField
+            sx={{ m: 1 }}
+            className="App-textField"
+            label="Contraseña"
+            type={"password"}
+            variant="outlined"
+          />
+          <FormControl sx={{ m: 1, marginTop: 0 }} fullWidth>
             <InputLabel id="demo-simple-select-label">EPS</InputLabel>
             <Select
               labelId="demo-simple-select-label"
@@ -35,20 +42,6 @@ const Register = () => {
               <MenuItem value={30}>Otro</MenuItem>
             </Select>
           </FormControl>
-          <TextField
-            sx={{ m: 1, marginTop: 0 }}
-            className="App-textField"
-            label="Email"
-            type={"email"}
-            variant="outlined"
-          />
-          <TextField
-            sx={{ m: 1 }}
-            className="App-textField"
-            label="Contraseña"
-            type={"password"}
-            variant="outlined"
-          />
         </div>
         <div className="register-col2">
           <TextField
@@ -57,9 +50,13 @@ const Register = () => {
             label="Nombre"
             variant="outlined"
           />
-         
-
-
+          <TextField
+            sx={{ m: 1, marginTop: 0 }}
+            className="App-textField"
+            label="Email"
+            type={"email"}
+            variant="outlined"
+          />
           <TextField
             sx={{ m: 1, marginTop: 0 }}
             className="App-textField"

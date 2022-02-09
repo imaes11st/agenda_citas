@@ -1,125 +1,19 @@
-import React from "react";
-import { TextField } from "@mui/material";
-import { Button } from "@mui/material";
-import { FormGroup } from "@mui/material";
-import { FormControlLabel } from "@mui/material";
-import { Checkbox } from "@mui/material";
-import { useState, useRef } from "react";
-import { Alert, AlertTitle } from "@mui/material";
-import ReCAPTCHA from "react-google-recaptcha";
+import React from "react-dom";
 import "./Home.css";
-import { Link } from "@mui/material";
-import Register from "./Register";
+import { Card } from "@mui/material";
+import { Button } from "@mui/material";
 
 const Home = () => {
-  const [captchaValido, cambiarCaptchaValido] = useState(null);
-  const [usuarioValido, cambiarUsuarioValido] = useState(false);
-
-  const captcha = useRef(null);
-
-  const onChange = () => {
-    if (captcha.current.getValue()) {
-      console.log("El usuario no es un robot");
-      cambiarCaptchaValido(true);
-    }
-  };
-
-  const submit = (e) => {
-    e.preventDefault();
-
-    // Validamos los inputs del formulario
-    // Si son correctos ya podemos enviar el fomulario, actualizar la Interfaz, etc.
-
-    if (captcha.current.getValue()) {
-      console.log("El usuario no es un robot");
-      cambiarUsuarioValido(true);
-      cambiarCaptchaValido(true);
-    } else {
-      console.log("Por favor acepta el captcha");
-      cambiarUsuarioValido(false);
-      cambiarCaptchaValido(false);
-    }
-  };
-
   return (
-    <div className="App">
-      {!usuarioValido && (
+    <div className="ensayo">
+      <Card>
+        <h1>Consultas</h1>
         <div>
-          <h1>Asignacion citas</h1>
-          <form className="App-form" action="" onSubmit={submit}>
-            <div className="App-textField">
-              <FormGroup>
-                <FormControlLabel
-                  control={<Checkbox {...Checkbox} />}
-                  label="Recordar"
-                />
-              </FormGroup>
-              <TextField
-                sx={{ m: 1 }}
-                className="App-textField"
-                label="Contraseña"
-                type="password"
-                variant="outlined"
-              />
-              <TextField
-                sx={{ m: 1, marginLeft: 15 }}
-                className="App-textField"
-                label="Documento Identidad"
-                variant="outlined"
-              />
-            </div>
-            <div className="App-recaptcha">
-              <ReCAPTCHA
-                ref={captcha}
-                sitekey="6LfD5lkeAAAAABZ4Y6ffNcPvebGmiyxAcE4Wc-vw"
-                onChange={onChange}
-              />
-            </div>
-            {captchaValido === false && (
-              <div className="error-captcha">
-                <Alert severity="error">
-                  <AlertTitle>Error</AlertTitle>
-                  Esta es una alerta de error reCaptcha—{"#01RC"}
-                </Alert>
-              </div>
-            )}
-            <div className="App-row">
-              <Button
-                sx={{ marginLeft: 2, marginRight: 2 }}
-                ClassName="App-button"
-                variant="text"
-              >
-                Registrar
-              </Button>
-              <Button
-                sx={{ marginLeft: 2, marginRight: 2 }}
-                type="submit"
-                ClassName="App-button"
-                variant="contained"
-                disableElevation
-              >
-                Ingresar
-              </Button>
-            </div>
-          </form>
-          <div className="olvidoContraseña">
-            <Link to={Register}>
-              <Button
-                sx={{ marginLeft: 2, marginRight: 2 }}
-                ClassName="App-button"
-                variant="text"
-              >
-                Olvido Clave
-              </Button>
-            </Link>
-          </div>
+          <p>Aqui apareceran las citas pendientes</p>
+          <p>No hay citas pendientes</p>
         </div>
-      )}
-      {usuarioValido && (
-        <div>
-          <h1>Iniciaste sesion</h1>
-        </div>
-      )}
+        <Button>Pedir cita</Button>
+      </Card>
     </div>
   );
 };

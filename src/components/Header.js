@@ -7,6 +7,7 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 const Header = () => {
   const [tablet, setTablet] = useState(false);
   const classes = useStyle();
+
   const displayTablet = () => {};
   const displayDesktop = () => (
     <Toolbar className={classes.toolbar}>
