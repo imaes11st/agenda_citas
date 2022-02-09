@@ -8,6 +8,8 @@ import { useState, useRef } from "react";
 import { Alert, AlertTitle } from "@mui/material";
 import ReCAPTCHA from "react-google-recaptcha";
 import "./Home.css";
+import { Link } from "@mui/material";
+import Register from "./Register";
 
 const Home = () => {
   const [captchaValido, cambiarCaptchaValido] = useState(null);
@@ -101,15 +103,21 @@ const Home = () => {
             </div>
           </form>
           <div className="olvidoContraseña">
-            <li>
-              <a href="./register">¿Olvidaste tu contraseña?</a>
-            </li>
+            <Link to={Register}>
+              <Button
+                sx={{ marginLeft: 2, marginRight: 2 }}
+                ClassName="App-button"
+                variant="text"
+              >
+                Olvido Clave
+              </Button>
+            </Link>
           </div>
         </div>
       )}
       {usuarioValido && (
         <div>
-          <h1>Iniciaste sesion</h1>i
+          <h1>Iniciaste sesion</h1>
         </div>
       )}
     </div>
