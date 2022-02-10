@@ -11,11 +11,11 @@ const Header = () => {
   const displayTablet = () => {};
   const displayDesktop = () => (
     <Toolbar className={classes.toolbar}>
-      <img src={logo} className={classes.logo} />
+      <img src={logo} alt="Logo Institucional" className={classes.logo} />
       <div className={classes.center}>
         <InputBase
           fullWidth
-          placeholder="Busca en la entidad"
+          placeholder="Buscar en la entidad"
           inputProps={{ className: classes.input }}
         />
         <SearchOutlinedIcon />
@@ -38,17 +38,18 @@ const useStyle = makeStyles((theme) => ({
   root: {
     position: "sticky",
     top: 0,
-    zIndex: 99,
-    width: "100vw",
+    zIndex: 2,
+    width: "100%",
   },
   toolbar: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    background: "#FFFFFF",
+    backgroundColor: "#FFFFFF",
+    padding: "17px",
   },
   logo: {
-    height: "30px",
+    height: "45px",
     margin: theme.spacing(1, 0, 0, 2),
     objectFit: "contain",
   },
@@ -56,14 +57,14 @@ const useStyle = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     border: "1px solid lightgray",
-    borderRadius: "999px",
-    minWidth: "300px",
+    borderRadius: "8px",
+    Width: "120%",
     padding: theme.spacing(1),
     margin: theme.spacing(1),
     color: "#B0B0B0",
   },
   input: {
-    fontSize: "2rem",
+    fontSize: "12px",
     padding: theme.spacing(1, 5, 1, 5),
   },
   right: {
