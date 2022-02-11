@@ -2,7 +2,9 @@ import { AppBar, Toolbar, Typography, Avatar, InputBase } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
 import { useState } from "react";
 import logo from "../images/logo2.png";
+import TopLogo from "../images/gov-co-barTop.png";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import "./Header.css";
 
 const Header = () => {
   const [tablet, setTablet] = useState(false);
@@ -10,21 +12,28 @@ const Header = () => {
 
   const displayTablet = () => {};
   const displayDesktop = () => (
-    <Toolbar className={classes.toolbar}>
-      <img src={logo} alt="Logo Institucional" className={classes.logo} />
-      <div className={classes.center}>
-        <InputBase
-          fullWidth
-          placeholder="Buscar en la entidad"
-          inputProps={{ className: classes.input }}
-        />
-        <SearchOutlinedIcon />
+    <>
+      <div className={classes.TopLogo}>
+        <Toolbar>
+          <img src={TopLogo} alt="Logo Gov" className={classes.TopLogoGov} />
+        </Toolbar>
       </div>
-      <div className={classes.right}>
-        <Typography> Iniciar sesión </Typography>
-        <Avatar className={classes.avatar} />
-      </div>
-    </Toolbar>
+      <Toolbar className={classes.toolbar}>
+        <img src={logo} alt="Logo Institucional" className={classes.logo} />
+        <div className={classes.center}>
+          <InputBase
+            fullWidth
+            placeholder="Buscar en la entidad"
+            inputProps={{ className: classes.input }}
+          />
+          <SearchOutlinedIcon />
+        </div>
+        <div className={classes.right}>
+          <Typography> Iniciar sesión </Typography>
+          <Avatar className={classes.avatar} />
+        </div>
+      </Toolbar>
+    </>
   );
 
   return (
@@ -40,6 +49,17 @@ const useStyle = makeStyles((theme) => ({
     top: 0,
     zIndex: 2,
     width: "100%",
+  },
+  TopLogoGov: {
+    height: "40px",
+    width: "100px",
+    paddingBottom: "25px",
+    paddingLeft: "25px",
+  },
+  TopLogo: {
+    height: "40px",
+    backgroundColor: "#005dca",
+    display: "flex",
   },
   toolbar: {
     display: "flex",
