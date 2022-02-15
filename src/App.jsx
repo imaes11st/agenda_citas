@@ -1,10 +1,10 @@
-import Header from "./components/Header.js";
-import Login from "./components/Login.js";
+import Header from "./components/Header.jsx";
+import Login from "./components/Login.jsx";
 import { Route, Routes } from "react-router-dom";
-import Register from "./components/Register.js";
-import Home from "./components/Home.js";
-import ViewColaborador from "./components/ViewColaborador.js";
-import Footer from "./components/Footer.js";
+import Register from "./components/Register.jsx";
+import Home from "./components/Home.jsx";
+import ViewColaborador from "./components/ViewColaborador.jsx";
+import Footer from "./components/Footer.jsx";
 
 // App
 
