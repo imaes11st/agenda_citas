@@ -9,6 +9,7 @@ import { Alert, AlertTitle } from "@mui/material";
 import ReCAPTCHA from "react-google-recaptcha";
 import "./Login.css";
 import { Link } from "@mui/material";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 const Home = () => {
   const [captchaValido, cambiarCaptchaValido] = useState(null);
@@ -104,7 +105,7 @@ const Home = () => {
               <Link to="./Register.js">
                 <Button
                   sx={{ marginLeft: 1, marginRight: 1 }}
-                  ClassName="App-button"
+                  className="App-button"
                   variant="text"
                 >
                   Olvido Clave
@@ -119,6 +120,9 @@ const Home = () => {
           <h1>Iniciaste sesion</h1>
         </div>
       )}
+      <div className="flechaLogin">
+        <ArrowDownwardIcon color="primary" />
+      </div>
     </div>
   );
 };

@@ -13,13 +13,13 @@ function App() {
     <div>
       <div>
         <Routes>
-          <Route path="/Header" element={<Header />} />
+          <Route path="/" element={<Header />} />
         </Routes>
       </div>
       <div>
         <Routes>
           <Route path="/Home" element={<Home />} />
-          <Route path="/Login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/ViewColaborador" element={<ViewColaborador />} />
         </Routes>
