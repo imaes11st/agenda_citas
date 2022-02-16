@@ -9,8 +9,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { Link } from "@mui/material";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { useState, useRef } from "react";
-//import { useFormik } from "formik";
-//import * as yup from "yup";
 
 const FormularioLogin = () => {
   const [captchaValido, cambiarCaptchaValido] = useState(null);
