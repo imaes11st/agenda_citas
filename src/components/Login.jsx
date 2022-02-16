@@ -94,7 +94,7 @@ const Home = () => {
               <Button
                 sx={{ marginLeft: 1, marginRight: 1 }}
                 type="submit"
-                ClassName="App-button"
+                className="App-button"
                 variant="contained"
                 disableElevation
               >

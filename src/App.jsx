@@ -13,20 +13,20 @@ function App() {
     <div>
       <div>
         <Routes>
-          <Route path="/" element={<Header />} />
+          <Route path="*" element={<Header />} />
         </Routes>
       </div>
       <div>
         <Routes>
           <Route path="/Home" element={<Home />} />
-          <Route path="/" element={<Login />} />
+          <Route path="*" element={<Login />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/ViewColaborador" element={<ViewColaborador />} />
         </Routes>
       </div>
       <div>
         <Routes>
-          <Route path="/" element={<Footer />} />
+          <Route path="*" element={<Footer />} />
         </Routes>
       </div>
     </div>

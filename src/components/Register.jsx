@@ -68,7 +68,7 @@ const Register = () => {
       <div className="App-row">
         <Button
           sx={{ marginLeft: 2, marginRight: 2 }}
-          ClassName="App-button"
+          className="App-button"
           variant="contained"
           disableElevation
         >
