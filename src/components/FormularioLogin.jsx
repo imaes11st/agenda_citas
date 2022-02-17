@@ -1,128 +1,89 @@
-import React from "react";
-import { TextField } from "@mui/material";
-import { Button } from "@mui/material";
-import { FormGroup } from "@mui/material";
-import { FormControlLabel } from "@mui/material";
-import { Checkbox } from "@mui/material";
-import { Alert, AlertTitle } from "@mui/material";
-import ReCAPTCHA from "react-google-recaptcha";
-import { Link } from "@mui/material";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import { useState, useRef } from "react";
+import React from 'react';
+import { Formik } from 'formik';
+import { Button, TextField } from '@mui/material';
+import "./FormularioLogin.css";
+import { Link } from '@material-ui/core';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const FormularioLogin = () => {
-  const [captchaValido, cambiarCaptchaValido] = useState(null);
-  const [usuarioValido, cambiarUsuarioValido] = useState(false);
 
-  const captcha = useRef(null);
-
-  const onChange = () => {
-    if (captcha.current.getValue()) {
-      console.log("El usuario no es un robot");
-      cambiarCaptchaValido(true);
-    }
-  };
-
-  const submit = (e) => {
-    e.preventDefault();
-
-    // Validamos los inputs del formulario
-    // Si son correctos ya podemos enviar el fomulario, actualizar la Interfaz, etc.
-
-    if (captcha.current.getValue()) {
-      console.log("El usuario no es un robot");
-      cambiarUsuarioValido(true);
-      cambiarCaptchaValido(true);
-    } else {
-      console.log("Por favor acepta el captcha");
-      cambiarUsuarioValido(false);
-      cambiarCaptchaValido(false);
-    }
-  };
-  return (
-    <div>
-      {!usuarioValido && (
-        <form className="App-form1" action="" onSubmit={submit}>
-          <div className="App-textField1">
-            <FormGroup>
-              <FormControlLabel
-                control={<Checkbox {...Checkbox} />}
-                label="Recordar"
-              />
-            </FormGroup>
-            <TextField
-              sx={{ m: 1 }}
-              className="App-textField"
-              id="contraseña"
-              name="contraseña"
-              label="Contraseña"
-              type="password"
-              variant="outlined"
-            />
-            <TextField
-              sx={{ m: 1, marginLeft: 15 }}
-              className="App-textField"
-              id="cedula"
-              name="cedula"
-              label="Cedula"
-              type="int"
-              variant="outlined"
-            />
-          </div>
-
-          <div className="App-recaptcha">
-            <ReCAPTCHA
-              ref={captcha}
-              sitekey="6LfD5lkeAAAAABZ4Y6ffNcPvebGmiyxAcE4Wc-vw"
-              onChange={onChange}
-            />
-          </div>
-          {captchaValido === false && (
-            <div className="error-captcha">
-              <Alert severity="error">
-                <AlertTitle>
-                  <strong>ERROR</strong>
-                </AlertTitle>
-                <strong>Realizar RECAPCHA {"#C001"}</strong>
-              </Alert>
-            </div>
-          )}
-          <div className="App-row">
-            <Button
-              sx={{ marginLeft: 2, marginRight: 2 }}
-              ClassName="App-button"
-              variant="text"
-            >
-              Registrar
-            </Button>
-            <Button
-              sx={{ marginLeft: 1, marginRight: 1 }}
-              type="submit"
-              className="App-button"
-              variant="contained"
-              disableElevation
-            >
-              Ingresar
-            </Button>
-          </div>
-          <div className="olvidoContraseña">
-            <Link to="./Register.js">
-              <Button
-                sx={{ marginLeft: 1, marginRight: 1 }}
-                className="App-button"
-                variant="text"
-              >
-                Olvido Clave
-              </Button>
-            </Link>
-          </div>
-        </form>
-      )}
-      <div className="flechaLogin">
-        <ArrowDownwardIcon color="primary" />
-      </div>
+	return (
+		<>
+    <Formik 
+    initialValues={{
+      docIdentidad:'',
+      contraeña:''
+    }}
+    validate={(valores) => {
+      let errores = {};
+      // Validacion documento identidas
+      if (!valores.docIdentidad){
+        errores.docIdentidad = 'Por favor ingrese el documento'
+      } else if (!/^[0-9]/.test(valores.docIdentidad)){
+        errores.docIdentidad= 'El documento solo contiene numeros'
+      }
+      // Validacion Contraseña
+      if (!valores.contraseña){
+        errores.contraseña = 'Por favor ingrese la contraseña'
+      } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/.test(valores.contraseña)){
+        errores.contraseña= 'Digite la contraseña'
+      }
+      return errores;
+    }}
+    onSubmit={(valores, {resetForm}) => {
+      resetForm();
+      console.log('Formulario enviado') //Llamado a la API
+    }}
+    >
+    {({values, errors, touched, handleSubmit, handleChange, handleBlur}) =>
+    <form onSubmit={handleSubmit}>
+    <div className='containerForm'> 
+    <div className='formLogin-col'>
+      <TextField 
+        className="App-textField"
+        id="outlined-basic"         
+        type="text"
+        name="docIdentidad"
+        placeholder="Documento Identidad" 
+        label="Documento Identidad" 
+        variant="outlined"         
+        value={values.docIdentidad}
+        onChange={handleChange}
+        onBlur={handleBlur}/>
+        {touched.docIdentidad && errors.docIdentidad && <div className='error'>{errors.docIdentidad}</div>}
     </div>
-  );
-};
-
+    <div className="formLogin-col">
+    <TextField
+        className="App-textField"
+        id="outlined-basic1"         
+        type="password"
+        name="contraseña"
+        placeholder="Contraseña" 
+        label="Contraseña" 
+        variant="outlined"         
+        value={values.contraseña}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        />
+      {touched.contraseña && errors.contraseña && <div className='error'>{errors.contraseña}</div>}
+    </div>
+    </div>
+    <div className='btnFormLogin'>
+    <Button type="submit" variant="contained">Ingresar</Button>
+    </div>
+    <div className="linkOlvideContraseña">
+    <Link href="">
+      <strong>Olvide la contraseña</strong>
+      </Link>
+    </div>
+    <div>
+    <ExpandMoreIcon color="primary"/>
+  </div>
+  </form>
+    }
+			</Formik>
+		</>
+	);
+}
+ 
 export default FormularioLogin;

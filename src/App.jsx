@@ -6,8 +6,6 @@ import Home from "./components/Home.jsx";
 import ViewColaborador from "./components/ViewColaborador.jsx";
 import Footer from "./components/Footer.jsx";
 
-// App
-
 function App() {
   return (
     <div>
@@ -19,8 +17,8 @@ function App() {
       <div>
         <Routes>
           <Route path="/Home" element={<Home />} />
-          <Route path="*" element={<Login />} />
-          <Route path="/Register" element={<Register />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="*" element={<Register />} />
           <Route path="/ViewColaborador" element={<ViewColaborador />} />
         </Routes>
       </div>

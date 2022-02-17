@@ -1,7 +1,17 @@
 .ensayo {
-  margin-top: 180px;
+  margin-top: 200px;
   margin-left: 250px;
   margin-right: 250px;
   align-items: center;
   text-align: center;
+}
+.homeCard{
+  border: 1px solid 	#808080;
+}
+.homeTitle {
+  margin: 30px;
+}
+
+.homeDivParraf {
+  margin: 30px;
 }

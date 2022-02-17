@@ -6,9 +6,9 @@ import { Button } from "@mui/material";
 const Home = () => {
   return (
     <div className="ensayo">
-      <Card>
-        <h1>Consultas</h1>
-        <div>
+      <Card className="homeCard">
+        <h1 className="homeTitle">Consultas</h1>
+        <div className="homeDivParraf">
           <p>Aqui apareceran las citas pendientes</p>
           <p>No hay citas pendientes</p>
         </div>

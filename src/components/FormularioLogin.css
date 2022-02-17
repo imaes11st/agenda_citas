@@ -1,0 +1,30 @@
+.containerForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 30px;
+}
+.formLogin-col{
+    margin: 30px;
+}
+
+  .register-col1 {
+    margin-left: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+ .error {
+     color: red;
+     font-size: 0.8rem;
+     text-align: start;
+ }
+
+ .btnFormLogin{
+     margin: 30px;
+ }
+
+ .linkOlvideContraseña{
+     margin: 30px;
+ }
