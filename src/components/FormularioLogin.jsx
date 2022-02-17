@@ -12,7 +12,7 @@ const FormularioLogin = () => {
     <Formik 
     initialValues={{
       docIdentidad:'',
-      contraeña:''
+      contraseña:''
     }}
     validate={(valores) => {
       let errores = {};
